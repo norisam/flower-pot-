@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petal &amp; Pot – grow a tiny garden</title>
+<script type="text/javascript" nonce="595ff16b69e745238d2b85febaf" src="//local.adguard.org?ts=1790756391022&amp;type=content-script&amp;dmn=5a31bb70-699f-4fbb-8844-f4e4cfe3b5fb.frame.claudeusercontent.com&amp;url=https%3A%2F%2F5a31bb70-699f-4fbb-8844-f4e4cfe3b5fb.frame.claudeusercontent.com%2F_f%2F1790757684-9752%2F_src%2Findex.html%3F__frame_t%3DcZzyTm9FMY3jOngVrJ547n6q.c6c2dc6c-4aa0-4078-b12b-e2a668510dfb.fcff2e5b-b7e7-436f-bec2-fe180e4d82bb.1790761285&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="595ff16b69e745238d2b85febaf" src="//local.adguard.org?ts=1790756391022&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf6c8; --panel:#fffbe6; --pink:#ff8fa8; --pink-soft:#ffd0da; --butter:#f6e97a; --sage:#9bbf6a; --forest:#2f5a44; --ink:#173a2b; --dim:#5d7a68;
+  --head:'Fredoka','Trebuchet MS',system-ui,sans-serif; --body:'Nunito',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b2b22;--panel:#243a2d;--pink-soft:#5a3a45;--ink:#fdf6c8;--dim:#b7cdbb;--forest:#9bbf6a}}
+:root[data-theme="dark"]{--bg:#1b2b22;--panel:#243a2d;--pink-soft:#5a3a45;--ink:#fdf6c8;--dim:#b7cdbb;--forest:#9bbf6a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+.wrap{max-width:1040px;margin:0 auto;padding:50px 22px}
+h1,h2,h3{font-family:var(--head);margin:0}
+h2{font-size:clamp(28px,5vw,40px);color:var(--pink);text-shadow:3px 3px 0 var(--forest)}
+.sub{color:var(--dim);margin:6px 0 22px;max-width:60ch}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:var(--bg);border-bottom:3px solid var(--ink)}
+.logo{font-family:var(--head);font-weight:700;font-size:22px;color:var(--pink);text-decoration:none;text-shadow:2px 2px 0 var(--forest)}
+nav a{font-family:var(--head);margin-left:18px;text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:99px;transition:.2s}
+nav a:hover{background:var(--pink);color:#fff;transform:rotate(-3deg) scale(1.06)}
+#stars{position:absolute;inset:0;height:900px;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;clip-path:polygon(50% 0,60% 20%,80% 10%,78% 32%,100% 35%,84% 50%,100% 65%,78% 68%,80% 90%,60% 80%,50% 100%,40% 80%,20% 90%,22% 68%,0 65%,16% 50%,0 35%,22% 32%,20% 10%,40% 20%);animation:spin 18s linear infinite;transition:transform .3s}
+@keyframes spin{to{rotate:360deg}}
+main,header,footer{position:relative;z-index:1}
+.hero{display:grid;place-items:center;padding:60px 22px 30px}
+.cloud{background:var(--butter);color:#173a2b;border:4px solid var(--ink);border-radius:58% 42% 52% 48%/48% 56% 44% 52%;padding:56px clamp(28px,7vw,80px);text-align:center;max-width:680px;box-shadow:8px 8px 0 var(--pink);animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-.6deg)}}
+.cloud small{font-family:var(--head);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.cloud h1{font-size:clamp(38px,8vw,68px);line-height:1.05;margin:10px 0 14px;color:var(--pink);text-shadow:4px 4px 0 var(--forest);-webkit-text-stroke:2px #173a2b;paint-order:stroke fill}
+.cloud p{margin:0 0 22px}
+.btn{font-family:var(--head);font-weight:600;font-size:16px;background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:99px;padding:10px 22px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-3px) rotate(-2deg);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--ink)}
+.btn.alt{background:var(--sage);color:#173a2b}
+.btn.ghost{background:var(--panel);color:var(--ink)}
+.tools{display:flex;flex-direction:column;gap:14px;margin-bottom:18px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.lbl{font-family:var(--head);color:var(--dim)}
+.chip{font-family:var(--head);font-size:15px;background:var(--panel);color:var(--ink);border:3px solid var(--ink);border-radius:99px;padding:6px 14px;cursor:pointer;transition:.15s}
+.chip:hover{transform:translateY(-3px) rotate(-3deg);background:var(--pink-soft)}
+.chip.on{background:var(--butter);color:#173a2b;box-shadow:3px 3px 0 var(--pink)}
+.sw{width:32px;height:32px;border-radius:50%;border:3px solid var(--ink);cursor:pointer;transition:.15s;padding:0}
+.sw:hover{transform:scale(1.2) rotate(15deg)}
+.sw.on{box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--pink)}
+.stage{background:var(--pink-soft);border:4px solid var(--ink);border-radius:36px;box-shadow:8px 8px 0 var(--sage);overflow:hidden;background-image:linear-gradient(rgba(255,255,255,.35) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.35) 2px,transparent 2px);background-size:34px 34px}
+#garden canvas{display:block;width:100%!important}
+.says{margin-top:22px;background:var(--panel);border:3px solid var(--ink);border-radius:22px;padding:18px 22px}
+.says h3{margin-bottom:8px;color:var(--forest)}
+.says ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.says li{display:flex;gap:10px;align-items:baseline}
+.pill{font-family:var(--head);background:var(--butter);color:#173a2b;border:2px solid var(--ink);border-radius:99px;padding:1px 12px;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.fc{perspective:900px;height:330px;cursor:pointer}
+.fc-in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.fc:hover .fc-in,.fc.flip .fc-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:4px solid var(--ink);border-radius:28px;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:6px 6px 0 var(--ink);color:#173a2b}
+.back{transform:rotateY(180deg);background:var(--panel);color:var(--ink);justify-content:flex-start;align-items:flex-start;text-align:left;gap:6px;font-size:14px;overflow:auto}
+.big{font-size:84px;line-height:1;transition:transform .3s}
+.fc:hover .big{transform:scale(1.15) rotate(8deg)}
+.face h3{font-size:24px}
+.face .mean{font-size:14px}
+.back h3{color:var(--pink);text-shadow:2px 2px 0 var(--forest)}
+.back p{margin:0}
+.back b{font-family:var(--head)}
+.back .btn{margin-top:auto;font-size:14px;padding:6px 16px}
+footer{text-align:center;padding:30px 22px 50px;color:var(--dim);border-top:3px solid var(--ink)}
+.spark{position:fixed;pointer-events:none;z-index:99;width:14px;height:14px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:fade .7s forwards}
+@keyframes fade{to{transform:translateY(16px) scale(.2) rotate(120deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:600px){.wrap{padding:36px 16px}header{padding:10px 14px}nav a{margin-left:4px;padding:6px 8px}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true">
+  <span class="star" data-d="22" style="left:6%;top:14%;width:70px;height:70px;background:var(--butter)"></span>
+  <span class="star" data-d="-30" style="left:84%;top:10%;width:90px;height:90px;background:var(--pink)"></span>
+  <span class="star" data-d="16" style="left:90%;top:52%;width:54px;height:54px;background:var(--sage)"></span>
+  <span class="star" data-d="-18" style="left:3%;top:60%;width:60px;height:60px;background:var(--pink)"></span>
+  <span class="star" data-d="28" style="left:48%;top:4%;width:42px;height:42px;background:var(--sage)"></span>
+</div>
+<header id="top">
+  <a class="logo" href="#top">🌸 petal &amp; pot</a>
+  <nav><a href="#pot">Your pot</a><a href="#learn">Flower facts</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="cloud">
+    <small>a tiny garden in your browser</small>
+    <h1>Grow your own<br>flower pot</h1>
+    <p>Plant, water and say hi to six flowers – then flip the cards to learn their little secrets.</p>
+    <a class="btn" href="#pot">Start planting 🌱</a>
+  </div>
+</section>
+
+<section id="pot" class="wrap">
+  <h2>Plant your pot</h2>
+  <p class="sub">Pick a flower, then click the soil. Hover over a flower to meet it, click it to pull it out.</p>
+  <div class="tools">
+    <div class="row" id="chips"></div>
+    <div class="row"><span class="lbl">Pot</span><span id="swatches" class="row"></span></div>
+    <div class="row">
+      <button class="btn" id="water">💧 Water</button>
+      <button class="btn alt" id="shuffle">✨ Surprise me</button>
+      <button class="btn ghost" id="clear">Clear</button>
+    </div>
+  </div>
+  <div class="stage"><div id="garden"></div></div>
+  <div class="says"><h3>What your pot says</h3><div id="says"></div></div>
+</section>
+
+<section id="learn" class="wrap">
+  <h2>Flower facts</h2>
+  <p class="sub">Hover (or tap) a card to flip it. Like one? Plant it straight from the back.</p>
+  <div class="cards" id="cards"></div>
+</section>
+</main>
+
+<footer>Made with 🌷 and p5.js · Flower meanings are traditional "language of flowers" folklore.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script>
+
+
+var FLOWERS = [
+  { k: 'daisy', n: 'Daisy', e: '🌼', bg: '#fdf6c8', meaning: 'Innocence & new beginnings', season: 'Spring – autumn', sun: 'Full sun',
+    fact: 'Its name comes from "day\'s eye": the petals open at sunrise and close at dusk.', care: 'Snip faded blooms to get more flowers.' },
+  { k: 'tulip', n: 'Tulip', e: '🌷', bg: '#ffd0da', meaning: 'Perfect love & cheerfulness', season: 'Spring', sun: 'Sun to part shade',
+    fact: 'During Dutch "tulip mania" in the 1600s, rare bulbs sold for astonishing prices.', care: 'Plant bulbs in autumn. Soggy soil makes them rot.' },
+  { k: 'sunflower', n: 'Sunflower', e: '🌻', bg: '#f6e97a', meaning: 'Loyalty & joy', season: 'Summer – early autumn', sun: 'Full sun',
+    fact: 'Young sunflowers follow the sun across the sky. Grown-up ones mostly face east.', care: 'Give deep roots room and lots of water on hot days.' },
+  { k: 'rose', n: 'Rose', e: '🌹', bg: '#ffb3c4', meaning: 'Love & appreciation', season: 'Late spring – autumn', sun: '6+ hours of sun',
+    fact: 'People have grown roses for thousands of years. There are thousands of varieties today.', care: 'Prune in late winter or early spring.' },
+  { k: 'lavender', n: 'Lavender', e: '🪻', bg: '#dcc8f5', meaning: 'Calm & devotion', season: 'Summer', sun: 'Full sun',
+    fact: 'Bees adore it, and its scent is famously calming. It loves dry, sandy soil.', care: 'Go easy on the water. Too much makes it sulk.' },
+  { k: 'poppy', n: 'Poppy', e: '🌺', bg: '#ffc9a8', meaning: 'Remembrance & peaceful rest', season: 'Late spring – summer', sun: 'Full sun',
+    fact: 'Poppy seeds can sleep in the soil for years and sprout when the ground is disturbed.', care: 'Sow seeds where they will grow. Poppies hate being moved.' }
+];
+</script>
+<script>
+
+function makeSketch(p) {
+  var host = document.getElementById('garden');
+  var W = 600, H = 470, flowers = [], parts = [], drops = [];
+  var type = 'daisy', potCol = '#ff8fa8', hover = null, watering = 0, msg = '', msgT = 0;
+  var INK = '#173a2b', GREEN = '#6aa35a', MAX = 9;
+  var HT = { daisy: [150, 220], tulip: [140, 200], sunflower: [190, 260], rose: [150, 210], lavender: [110, 160], poppy: [140, 210] };
+
+  function geo() { var pw = Math.min(300, W * 0.72); return { cx: W / 2, pw: pw, top: H - 150 }; }
+  function ease(x) { return 1 - Math.pow(1 - x, 3); }
+  function info(k) { return FLOWERS.filter(function (f) { return f.k === k; })[0]; }
+  function notify() {
+    var c = {}; flowers.forEach(function (f) { c[f.t] = (c[f.t] || 0) + 1; });
+    if (window.Garden && window.Garden.onChange) window.Garden.onChange(c);
+  }
+  function plant(t, x, g0) {
+    if (flowers.length >= MAX) { msg = 'The pot is full! Click a flower to pull it out.'; msgT = 150; return; }
+    var G = geo(), r = HT[t], h = p.random(r[0], r[1]);
+    x = p.constrain(x, G.cx - G.pw / 2 + 26, G.cx + G.pw / 2 - 26);
+    flowers.push({ t: t, x: x, h: h, base: h, g: g0 || 0, ph: p.random(6.28), b: 0 });
+    burst(x, G.top - 8, 8); notify();
+  }
+  function burst(x, y, n) {
+    var cols = ['#ff8fa8', '#f6e97a', '#9bbf6a', '#fff'];
+    for (var i = 0; i < n; i++) parts.push({ x: x, y: y, vx: p.random(-3, 3), vy: p.random(-4.5, -.5), l: 60, s: p.random(5, 10), c: cols[i % 4] });
+  }
+  function pos(f) {
+    var g = ease(Math.min(1, f.g)), h = f.h * g;
+    return { g: g, h: h, sw: Math.sin(p.frameCount * .03 + f.ph) * 6 * g, x: 0, y: 0 };
+  }
+  function star(x, y, r1, r2, n) {
+    p.beginShape();
+    for (var i = 0; i < n * 2; i++) { var a = i * Math.PI / n - Math.PI / 2, r = i % 2 ? r1 : r2; p.vertex(x + Math.cos(a) * r, y + Math.sin(a) * r); }
+    p.endShape(p.CLOSE);
+  }
+
+  var HEAD = {
+    daisy: function () { p.strokeWeight(2.5); p.stroke(INK); p.fill('#fffaf0');
+      for (var i = 0; i < 12; i++) { p.push(); p.rotate(i * p.TWO_PI / 12); p.ellipse(24, 0, 26, 12); p.pop(); }
+      p.fill('#ffcf3a'); p.circle(0, 0, 24); },
+    tulip: function () { p.strokeWeight(2.5); p.stroke(INK); p.fill('#ff5f86');
+      p.push(); p.rotate(-.4); p.ellipse(-8, -18, 22, 44); p.pop();
+      p.push(); p.rotate(.4); p.ellipse(8, -18, 22, 44); p.pop();
+      p.fill('#ff86a6'); p.ellipse(0, -20, 22, 46); },
+    sunflower: function () { p.strokeWeight(2.5); p.stroke(INK); p.fill('#ffd23f');
+      for (var i = 0; i < 18; i++) { p.push(); p.rotate(i * p.TWO_PI / 18); p.ellipse(32, 0, 30, 12); p.pop(); }
+      p.fill('#7a4a2a'); p.circle(0, 0, 38); p.noStroke(); p.fill('#4a2c1a');
+      for (var j = 1; j < 22; j++) p.circle(Math.cos(j * 2.4) * Math.sqrt(j) * 3.6, Math.sin(j * 2.4) * Math.sqrt(j) * 3.6, 3.2); },
+    rose: function () { p.strokeWeight(2.5); p.stroke(INK); p.fill('#ff9db3');
+      for (var i = 0; i < 5; i++) { p.push(); p.rotate(i * p.TWO_PI / 5); p.circle(17, 0, 28); p.pop(); }
+      p.fill('#ff6f91'); p.circle(0, 0, 32); p.noFill(); p.stroke('#c23d63');
+      p.arc(0, 0, 22, 22, 0, 4.6); p.arc(1, 1, 11, 11, 1, 5.6); },
+    lavender: function () { p.strokeWeight(2); p.stroke(INK);
+      for (var i = 0; i < 9; i++) { var y = -i * 9, s = 14 - i * .8; p.fill(i % 2 ? '#b58be0' : '#cfa9f0');
+        p.ellipse(-5, y, s, s * 1.5); p.ellipse(5, y + 4, s, s * 1.5); p.ellipse(0, y - 5, s, s * 1.4); } },
+    poppy: function () { p.strokeWeight(2.5); p.stroke(INK); p.fill('#ff6b4a');
+      for (var i = 0; i < 5; i++) { p.push(); p.rotate(i * p.TWO_PI / 5 + .3); p.ellipse(19, 0, 32, 28); p.pop(); }
+      p.fill('#3b2a3a'); p.circle(0, 0, 18); p.noStroke(); p.fill('#ffe9a8');
+      for (var j = 0; j < 8; j++) p.circle(Math.cos(j * .785) * 12, Math.sin(j * .785) * 12, 3); }
+  };
+
+  function leaf(lx, ly, dir, g) {
+    p.push(); p.translate(lx, ly); p.rotate(dir * -.9); p.fill('#8cc06a'); p.stroke(INK); p.strokeWeight(2.5);
+    p.ellipse(dir * 16 * g, 0, 34 * g, 14 * g); p.pop();
+  }
+  function drawFlower(f, base, isHover) {
+    var q = pos(f), lean = p.constrain((p.mouseX - f.x) / 220, -1, 1) * 6 * q.g, sx = q.sw + lean;
+    p.push(); p.translate(f.x, base); p.noFill();
+    p.stroke(INK); p.strokeWeight(9); p.bezier(0, 0, 0, -q.h * .4, sx * .5, -q.h * .7, sx, -q.h);
+    p.stroke(GREEN); p.strokeWeight(5); p.bezier(0, 0, 0, -q.h * .4, sx * .5, -q.h * .7, sx, -q.h);
+    leaf(p.bezierPoint(0, 0, sx * .5, sx, .35), p.bezierPoint(0, -q.h * .4, -q.h * .7, -q.h, .35), -1, q.g);
+    leaf(p.bezierPoint(0, 0, sx * .5, sx, .55), p.bezierPoint(0, -q.h * .4, -q.h * .7, -q.h, .55), 1, q.g);
+    p.translate(sx, -q.h);
+    var open = Math.max(0, (q.g - .35) / .65), s = (isHover ? 1.2 : 1) * (1 + f.b * .25) * (.25 + .75 * open);
+    p.rotate(lean * .03 + (isHover ? Math.sin(p.frameCount * .3) * .12 : 0)); p.scale(s);
+    HEAD[f.t](); p.pop();
+    q.x = f.x + sx; q.y = base - q.h; return q;
+  }
+
+  function drawPot(G) {
+    var w = G.pw, cx = G.cx, top = G.top;
+    p.stroke(INK); p.strokeWeight(3.5); p.strokeJoin(p.ROUND); p.fill(potCol);
+    p.beginShape(); p.vertex(cx - w / 2, top); p.vertex(cx + w / 2, top); p.vertex(cx + w * .38, H - 8); p.vertex(cx - w * .38, H - 8); p.endShape(p.CLOSE);
+    p.fill(p.lerpColor(p.color(potCol), p.color(0), .14)); p.rect(cx - w / 2 - 10, top - 4, w + 20, 26, 10);
+    var ey = top + 56, look = watering > 0;
+    [-1, 1].forEach(function (d) {
+      var ex = cx + d * 26; p.stroke(INK); p.strokeWeight(3);
+      if (look) { p.noFill(); p.arc(ex, ey + 4, 16, 14, p.PI, p.TWO_PI); }
+      else { p.fill('#fff'); p.circle(ex, ey, 18); p.fill(INK); p.noStroke();
+        p.circle(ex + p.constrain((p.mouseX - ex) / 30, -1, 1) * 3, ey + p.constrain((p.mouseY - ey) / 30, -1, 1) * 3, 8); }
+      p.noStroke(); p.fill(255, 90, 130, 110); p.ellipse(cx + d * 46, ey + 14, 16, 9);
+    });
+    p.noFill(); p.stroke(INK); p.strokeWeight(3); p.arc(cx, ey + 12, 26, look ? 22 : 16, .15, p.PI - .15);
+  }
+
+  p.setup = function () {
+    W = host.clientWidth || 600;
+    var c = p.createCanvas(W, H); c.parent(host);
+    c.mousePressed(function () {
+      if (hover) { var G = geo(), q = pos(hover); burst(hover.x, G.top - q.h, 14); flowers.splice(flowers.indexOf(hover), 1); hover = null; notify(); }
+      else plant(type, p.mouseX, 0);
+    });
+    var G = geo();
+    [['daisy', -70], ['tulip', 10], ['sunflower', 75]].forEach(function (a, i) { plant(a[0], G.cx + a[1], .5 + i * .08); });
+  };
+  p.windowResized = function () { W = host.clientWidth || W; p.resizeCanvas(W, H); var G = geo(); flowers.forEach(function (f) { f.x = p.constrain(f.x, G.cx - G.pw / 2 + 26, G.cx + G.pw / 2 - 26); }); };
+
+  p.draw = function () {
+    p.clear(); var G = geo(), base = G.top - 2;
+    p.noStroke(); p.fill(23, 58, 43, 45); p.ellipse(G.cx, H - 6, G.pw, 20);
+    p.stroke(INK); p.strokeWeight(3); p.fill('#6b4a3a'); p.ellipse(G.cx, G.top - 2, G.pw - 6, 26);
+    hover = null; var best = 44;
+    flowers.forEach(function (f) {
+      f.g = Math.min(1, f.g + .012); f.b *= .92;
+      var q = pos(f), hx = f.x + q.sw, hy = base - q.h, d = p.dist(p.mouseX, p.mouseY, hx, hy);
+      if (q.g > .5 && d < best) { best = d; hover = f; }
+    });
+    var hq = null;
+    flowers.forEach(function (f) { var q = drawFlower(f, base, f === hover); if (f === hover) hq = q; });
+    drawPot(G);
+    p.cursor(hover ? 'pointer' : 'default');
+    if (watering > 0) { watering--; for (var i = 0; i < 2; i++) drops.push({ x: G.cx + p.random(-G.pw / 2, G.pw / 2), y: -10, vy: p.random(6, 9) }); }
+    p.stroke(INK); p.strokeWeight(1.5); p.fill('#7cc6ff');
+    drops = drops.filter(function (d) { d.y += d.vy; p.ellipse(d.x, d.y, 7, 12); return d.y < G.top - 10; });
+    p.noStroke();
+    parts = parts.filter(function (q) { q.x += q.vx; q.y += q.vy; q.vy += .12; q.l--; var c = p.color(q.c); c.setAlpha(q.l * 4.2); p.fill(c); star(q.x, q.y, q.s * .35, q.s, 4); return q.l > 0; });
+    p.textFont('Nunito, sans-serif'); p.textAlign(p.CENTER, p.CENTER);
+    if (hover && hq) {
+      var inf = info(hover.t), label = inf.n + ' · ' + inf.meaning; p.textSize(14); p.textStyle(p.BOLD);
+      var tw = p.textWidth(label) + 26, tx = p.constrain(hq.x, tw / 2 + 6, W - tw / 2 - 6), ty = Math.max(24, hq.y - 74);
+      p.stroke(INK); p.strokeWeight(2.5); p.fill('#fffbe6'); p.rect(tx - tw / 2, ty - 15, tw, 30, 15);
+      p.noStroke(); p.fill(INK); p.text(label, tx, ty);
+    }
+    if (!flowers.length) { p.noStroke(); p.fill(INK); p.textSize(18); p.text('Pick a flower and click the soil ✿', W / 2, H / 2 - 60); }
+    if (msgT > 0) { msgT--; p.noStroke(); p.fill(INK); p.textSize(16); p.text(msg, W / 2, 26); }
+  };
+
+  window.Garden = {
+    onChange: null,
+    setType: function (t) { type = t; },
+    setPot: function (c) { potCol = c; },
+    clear: function () { var G = geo(); flowers.forEach(function (f) { burst(f.x, G.top - f.h * .6, 4); }); flowers = []; notify(); },
+    water: function () {
+      watering = 45; var G = geo();
+      flowers.forEach(function (f) { f.b = 1; f.h = Math.min(f.base * 1.25, f.h * 1.06); burst(f.x, G.top - f.h, 5); });
+    },
+    shuffle: function () {
+      var G = geo(), keys = Object.keys(HT); this.clear();
+      for (var i = 0; i < 6; i++) plant(keys[Math.floor(p.random(keys.length))], G.cx - G.pw / 2 + 30 + i * (G.pw - 60) / 5, .2);
+    }
+  };
+}
+new p5(makeSketch);
+</script>
+<script>
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  var POTS = [['#ff8fa8', 'Pink'], ['#9bd6b1', 'Mint'], ['#ffe27a', 'Butter'], ['#c9a7f0', 'Lilac'], ['#8fd0ff', 'Sky']];
+
+  var chips = [];
+  function pick(k) {
+    Garden.setType(k);
+    chips.forEach(function (c) { c.b.classList.toggle('on', c.k === k); });
+  }
+  FLOWERS.forEach(function (f, i) {
+    var b = el('button', 'chip' + (i === 0 ? ' on' : ''), f.e + ' ' + f.n);
+    b.onclick = function () { pick(f.k); };
+    chips.push({ k: f.k, b: b }); $('chips').appendChild(b);
+  });
+
+  var sws = [];
+  POTS.forEach(function (c, i) {
+    var b = el('button', 'sw' + (i === 0 ? ' on' : '')); b.style.background = c[0]; b.setAttribute('aria-label', c[1] + ' pot');
+    b.onclick = function () { Garden.setPot(c[0]); sws.forEach(function (s) { s.classList.toggle('on', s === b); }); };
+    sws.push(b); $('swatches').appendChild(b);
+  });
+  $('water').onclick = function () { Garden.water(); };
+  $('shuffle').onclick = function () { Garden.shuffle(); };
+  $('clear').onclick = function () { Garden.clear(); };
+
+  Garden.onChange = function (counts) {
+    var box = $('says'); box.innerHTML = '';
+    var keys = Object.keys(counts);
+    if (!keys.length) { box.appendChild(el('p', null, 'Your pot is empty. Click the soil to plant something!')); return; }
+    var ul = el('ul');
+    FLOWERS.filter(function (f) { return counts[f.k]; }).forEach(function (f) {
+      var li = el('li'); li.appendChild(el('span', 'pill', f.e + ' ' + f.n + (counts[f.k] > 1 ? ' ×' + counts[f.k] : '')));
+      li.appendChild(el('span', null, f.meaning)); ul.appendChild(li);
+    });
+    box.appendChild(ul);
+  };
+
+  FLOWERS.forEach(function (f) {
+    var card = el('div', 'fc'), inn = el('div', 'fc-in');
+    var fr = el('div', 'face front'); fr.style.background = f.bg;
+    fr.appendChild(el('div', 'big', f.e)); fr.appendChild(el('h3', null, f.n)); fr.appendChild(el('div', 'mean', f.meaning));
+    var bk = el('div', 'face back'); bk.appendChild(el('h3', null, f.n));
+    bk.appendChild(el('p', null, f.fact));
+    var d1 = el('p'); d1.appendChild(el('b', null, 'Blooms: ')); d1.appendChild(document.createTextNode(f.season)); bk.appendChild(d1);
+    var d2 = el('p'); d2.appendChild(el('b', null, 'Light: ')); d2.appendChild(document.createTextNode(f.sun)); bk.appendChild(d2);
+    var d3 = el('p'); d3.appendChild(el('b', null, 'Care: ')); d3.appendChild(document.createTextNode(f.care)); bk.appendChild(d3);
+    var pb = el('button', 'btn', 'Plant it 🌱');
+    pb.onclick = function (e) { e.stopPropagation(); pick(f.k); document.getElementById('pot').scrollIntoView({ behavior: 'smooth' }); };
+    bk.appendChild(pb);
+    inn.appendChild(fr); inn.appendChild(bk); card.appendChild(inn);
+    card.onclick = function () { card.classList.toggle('flip'); };
+    $('cards').appendChild(card);
+  });
+
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!still && window.matchMedia('(pointer: fine)').matches) {
+    var last = 0, cols = ['#ff8fa8', '#f6e97a', '#9bbf6a'];
+    document.addEventListener('mousemove', function (e) {
+      var now = Date.now();
+      if (now - last > 45) {
+        last = now; var s = el('span', 'spark'); s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+        s.style.background = cols[Math.floor(Math.random() * 3)]; document.body.appendChild(s);
+        setTimeout(function () { s.remove(); }, 700);
+      }
+      var mx = e.clientX / innerWidth - .5, my = e.clientY / innerHeight - .5;
+      document.querySelectorAll('.star').forEach(function (st) {
+        var d = +st.dataset.d; st.style.transform = 'translate(' + mx * d + 'px,' + my * d + 'px)';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
